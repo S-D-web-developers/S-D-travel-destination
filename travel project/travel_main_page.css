@@ -55,15 +55,10 @@ main {
 
 #second-video {
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
+  position: absolute;
   object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 100vh;
-  bottom: 0;
   z-index: -1;
-  filter: blur(1px);
 }
 
 .countries {
