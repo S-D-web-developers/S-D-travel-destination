@@ -17,7 +17,7 @@ oceania.addEventListener("mouseover", function () {
 });
 
 oceania.addEventListener("mouseout", function () {
-  background.style.backgroundImage = 'url("oceania.jpg")';
+  background.style.backgroundImage = 'url("earth.jpg")';
 });
 
 southAmerica.addEventListener("mouseover", function () {
@@ -25,7 +25,7 @@ southAmerica.addEventListener("mouseover", function () {
 });
 
 southAmerica.addEventListener("mouseout", function () {
-  background.style.backgroundImage = 'url("southAmerica.jpg")';
+  background.style.backgroundImage = 'url("earth.jpg")';
 });
 
 asia.addEventListener("mouseover", function () {
@@ -33,5 +33,5 @@ asia.addEventListener("mouseover", function () {
 });
 
 asia.addEventListener("mouseout", function () {
-  background.style.backgroundImage = 'url("asia.jpg")';
+  background.style.backgroundImage = 'url("earth.jpg")';
 });
