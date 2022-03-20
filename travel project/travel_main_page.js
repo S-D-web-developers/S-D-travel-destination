@@ -4,6 +4,12 @@ const oceania = document.querySelector(".oceania");
 const southAmerica = document.querySelector(".south-america");
 const asia = document.querySelector(".asia");
 
+const main = document.querySelector("main");
+const continent = document.querySelector(".continent");
+const rocket = document.querySelector("#rocket");
+
+rocket.style.right = "0";
+
 europe.addEventListener("mouseover", function () {
   background.style.backgroundImage = 'url("europe.jpg")';
 });
