@@ -4,9 +4,11 @@ body {
   font-family: "Oswald", sans-serif;
   background-image: linear-gradient(
     180deg,
-    #ffffff 20%,
-    rgb(35, 128, 190) 100%
+    #ffffff 0%,
+    rgb(0, 0, 0) 60%,
+    rgb(0, 0, 0) 100%
   );
+  margin: 0;
 }
 
 .hidden {
@@ -42,52 +44,49 @@ h1 {
     0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
-main p {
-
-}
-
 #p1 {
-  position:relative;
-  top:1000px;
+  position: relative;
+  top: 1000px;
   animation-name: toTop;
-  animation-duration:2s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
-
 #p2 {
-  position:relative;
-  top:1000px;
+  position: relative;
+  top: 1000px;
   animation-name: toTop;
-  animation-duration:2s;
+  animation-duration: 2s;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
 #p3 {
-  position:relative;
-  top:1000px;
+  position: relative;
+  top: 1000px;
   animation-name: toTop;
-  animation-duration:2s;
+  animation-duration: 2s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
 #p4 {
-  position:relative;
-  top:1000px;
+  position: relative;
+  top: 1000px;
   animation-name: toTop;
-  animation-duration:2s;
+  animation-duration: 2s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes toTop {
-  0% {top:1000px;}
-  100% {top:0px;}
+  0% {
+    top: 1000px;
+  }
+  100% {
+    top: 0px;
+  }
 }
-
-
 
 .earth {
   background-image: url("earth.png");
@@ -101,7 +100,6 @@ main p {
   opacity: 0.2;
 }
 
-
 @keyframes para {
   100% {
     background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
@@ -110,35 +108,33 @@ main p {
 }
 
 .background {
-  position:absolute;
-  height:100%;
-  width:100%;
-  background-size:cover;
-  opacity:0.5;
-
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  opacity: 0.5;
 }
 
 .countries {
+  position: relative;
+  top: 10rem;
   display: flex;
   justify-content: space-around;
-  flex-wrap:wrap;
-}
-
-@keyframes country-develop {
-  from {width: 20%;}
-  to {width: 90%;}
+  flex-wrap: wrap;
+  margin-bottom: 20rem;
+  height: 100%;
 }
 
 .continent {
-  position:relative;
-  width:20%;
-display:flex;
-flex-direction: column;
-align-items:center;
-justify-content: center;
-cursor:pointer;
-top:50px;
-
+  position: relative;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  top: 50px;
 }
 
 .container-top {
@@ -151,12 +147,10 @@ top:50px;
   border-radius: 16px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  margin-top: 35%;
   font-size: 1.8rem;
   box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999,
     4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
   background-color: white;
-  border-bottom: 1px solid #999999;
 }
 
 .europe-background {
@@ -167,12 +161,40 @@ top:50px;
   );
 }
 
+.europe {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.5) 80%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("europe.jpg");
+  background-size: cover;
+  border-radius: 16px;
+}
+
 .oceania-background {
   background: linear-gradient(
     to bottom,
     hsla(204, 78%, 64%, 0.75) 0%,
     #ffffff 100%
   );
+}
+
+.oceania {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.5) 80%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("oceania.jpg");
+  background-size: cover;
+  border-radius: 16px;
 }
 
 .southAmerica-background {
@@ -183,6 +205,20 @@ top:50px;
   );
 }
 
+.southAmerica {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.5) 80%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("southAmerica.jpg");
+  background-size: cover;
+  border-radius: 16px;
+}
+
 .asia-background {
   background: linear-gradient(
     to bottom,
@@ -191,7 +227,36 @@ top:50px;
   );
 }
 
+.asia {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.5) 80%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url("asia.jpg");
+  background-size: cover;
+  border-radius: 16px;
+}
 
+@keyframes continent-hover {
+  from {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.5) 20%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.5) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("europe.jpg");
+  }
+  to {
+    background: hidden;
+  }
+}
 
 .container-bottom {
   display: flex;
@@ -213,6 +278,33 @@ top:50px;
     4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
 }
 
+@keyframes country-develop {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes country-rotation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes country-position {
+  from {
+    text-align: center;
+  }
+  to {
+    text-align: top;
+  }
+}
+
 .spain {
   background: linear-gradient(
       to bottom,
@@ -230,9 +322,11 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  display: none;
 }
+
 .spain p {
+  position: absolute;
   transform: rotate(-90deg);
   color: rgba(255, 255, 255);
   text-shadow: black 5px 5px 5px;
@@ -262,6 +356,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .greece p {
@@ -293,6 +388,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .australia p {
@@ -324,6 +420,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .new-caledonia p {
@@ -356,6 +453,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .chile p {
@@ -387,6 +485,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .costa-rica p {
@@ -419,6 +518,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .thailand p {
@@ -451,6 +551,7 @@ top:50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .united-arab-emirates p {
