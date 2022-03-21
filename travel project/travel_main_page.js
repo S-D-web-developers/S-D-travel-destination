@@ -22,17 +22,22 @@ const main = document.querySelector("main");
 const continent = document.querySelector(".continent");
 const rocket = document.querySelector("#rocket");
 
+clickEurope = false;
+
 europe.addEventListener("mouseover", function () {
   spain.style.display = "flex";
   greece.style.display = "flex";
 });
 
 europe.addEventListener("mouseout", function () {
-  spain.style.display = "none";
-  greece.style.display = "none";
+  if (!clickEurope) {
+    spain.style.display = "none";
+    greece.style.display = "none";
+  }
 });
 
 europe.addEventListener("click", function () {
+  clickEurope = true;
   europe.style.animationName = "country-develop";
   europe.style.animationDuration = "4s";
   europe.style.animationFillMode = "forwards";
