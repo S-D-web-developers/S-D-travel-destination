@@ -2,12 +2,14 @@
 
 body {
   font-family: "Oswald", sans-serif;
-  background-image: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    rgb(0, 0, 0) 60%,
-    rgb(0, 0, 0) 100%
-  );
+  background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 100%, 0.9) 0%,
+      rgba(0, 0, 0, 0.75) 60%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("space.jpeg");
+  background-size: cover;
   margin: 0;
 }
 
@@ -97,13 +99,31 @@ h1 {
   height: 100%;
   width: 100%;
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 @keyframes para {
   100% {
     background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
       400px 0;
+  }
+}
+
+@keyframes opacityLow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes opacityHigh {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -135,6 +155,7 @@ h1 {
   justify-content: center;
   cursor: pointer;
   top: 50px;
+  margin-top: 50px;
 }
 
 .container-top {
@@ -151,6 +172,37 @@ h1 {
   box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999,
     4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
   background-color: white;
+}
+
+#ovni {
+  position: absolute;
+  width: 7%;
+  bottom: 50%;
+  right: 50%;
+}
+
+@keyframes goEurope {
+  to {
+    right: 85%;
+  }
+}
+
+@keyframes goOceania {
+  to {
+    right: 60%;
+  }
+}
+
+@keyframes goSouthAmerica {
+  to {
+    right: 40%;
+  }
+}
+
+@keyframes goAsia {
+  to {
+    right: 15%;
+  }
 }
 
 .europe-background {
@@ -173,6 +225,7 @@ h1 {
     url("europe.jpg");
   background-size: cover;
   border-radius: 16px;
+  transition: all 2s;
 }
 
 .oceania-background {
@@ -239,23 +292,6 @@ h1 {
     url("asia.jpg");
   background-size: cover;
   border-radius: 16px;
-}
-
-@keyframes continent-hover {
-  from {
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.5) 20%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0.5) 80%,
-        rgba(255, 255, 255, 1) 100%
-      ),
-      url("europe.jpg");
-  }
-  to {
-    background: hidden;
-  }
 }
 
 .container-bottom {

@@ -1,3 +1,4 @@
+const ovni = document.querySelector("#ovni");
 // europe section const
 const europe = document.querySelector(".europe");
 const spain = document.querySelector(".spain");
@@ -22,22 +23,32 @@ const main = document.querySelector("main");
 const continent = document.querySelector(".continent");
 const rocket = document.querySelector("#rocket");
 
-clickEurope = false;
+let clickEurope = false;
+let clickOceania = false;
+let clickSouthAmerica = false;
+let clickAsia = false;
+let ovniPosition = "50%";
 
 europe.addEventListener("mouseover", function () {
-  spain.style.display = "flex";
-  greece.style.display = "flex";
+  oceania.style.animation = "opacityLow 1s forwards";
+  southAmerica.style.animation = "opacityLow 1s forwards";
+  asia.style.animation = "opacityLow 1s forwards";
+  europe.style.animation = "opacityHigh 1s forwards";
+  ovni.style.right = `${ovniPosition}`;
+  ovni.style.animationName = "goEurope";
+  ovni.style.animationDuration = "3s";
+  ovni.style.animationFillMode = "forwards";
+  ovniPosition = "85%";
 });
 
 europe.addEventListener("mouseout", function () {
   if (!clickEurope) {
-    spain.style.display = "none";
-    greece.style.display = "none";
   }
 });
 
 europe.addEventListener("click", function () {
   clickEurope = true;
+  document.getElementById("europe").style.backgroundImage = "none";
   europe.style.animationName = "country-develop";
   europe.style.animationDuration = "4s";
   europe.style.animationFillMode = "forwards";
@@ -56,16 +67,25 @@ europe.addEventListener("click", function () {
 });
 
 oceania.addEventListener("mouseover", function () {
-  australia.style.display = "flex";
-  newCaledonia.style.display = "flex";
+  europe.style.animation = "opacityLow 1s forwards";
+  southAmerica.style.animation = "opacityLow 1s forwards";
+  asia.style.animation = "opacityLow 1s forwards";
+  oceania.style.animation = "opacityHigh 1s forwards";
+  ovni.style.right = `${ovniPosition}`;
+  ovni.style.animationName = "goOceania";
+  ovni.style.animationDuration = "3s";
+  ovni.style.animationFillMode = "forwards";
+  ovniPosition = "60%";
 });
 
 oceania.addEventListener("mouseout", function () {
-  australia.style.display = "none";
-  newCaledonia.style.display = "none";
+  if (!clickOceania) {
+  }
 });
 
 oceania.addEventListener("click", function () {
+  clickOceania = true;
+  document.getElementById("oceania").style.backgroundImage = "none";
   oceania.style.animationName = "country-develop";
   oceania.style.animationDuration = "4s";
   oceania.style.animationFillMode = "forwards";
@@ -84,16 +104,25 @@ oceania.addEventListener("click", function () {
 });
 
 southAmerica.addEventListener("mouseover", function () {
-  chile.style.display = "flex";
-  costaRica.style.display = "flex";
+  oceania.style.animation = "opacityLow 1s forwards";
+  europe.style.animation = "opacityLow 1s forwards";
+  asia.style.animation = "opacityLow 1s forwards";
+  southAmerica.style.animation = "opacityHigh 1s forwards";
+  ovni.style.right = `${ovniPosition}`;
+  ovni.style.animationName = "goSouthAmerica";
+  ovni.style.animationDuration = "3s";
+  ovni.style.animationFillMode = "forwards";
+  ovniPosition = "40%";
 });
 
 southAmerica.addEventListener("mouseout", function () {
-  chile.style.display = "none";
-  costaRica.style.display = "none";
+  if (!clickSouthAmerica) {
+  }
 });
 
 southAmerica.addEventListener("click", function () {
+  clickSouthAmerica = true;
+  document.getElementById("southAmerica").style.backgroundImage = "none";
   southAmerica.style.animationName = "country-develop";
   southAmerica.style.animationDuration = "4s";
   southAmerica.style.animationFillMode = "forwards";
@@ -112,16 +141,25 @@ southAmerica.addEventListener("click", function () {
 });
 
 asia.addEventListener("mouseover", function () {
-  thailand.style.display = "flex";
-  uae.style.display = "flex";
+  oceania.style.animation = "opacityLow 1s forwards";
+  europe.style.animation = "opacityLow 1s forwards";
+  southAmerica.style.animation = "opacityLow 1s forwards";
+  asia.style.animation = "opacityHigh 1s forwards";
+  ovni.style.right = `${ovniPosition}`;
+  ovni.style.animationName = "goAsia";
+  ovni.style.animationDuration = "3s";
+  ovni.style.animationFillMode = "forwards";
+  ovniPosition = "15%";
 });
 
 asia.addEventListener("mouseout", function () {
-  thailand.style.display = "none";
-  uae.style.display = "none";
+  if (!clickAsia) {
+  }
 });
 
 asia.addEventListener("click", function () {
+  clickAsia = true;
+  document.getElementById("asia").style.backgroundImage = "none";
   asia.style.animationName = "country-develop";
   asia.style.animationDuration = "4s";
   asia.style.animationFillMode = "forwards";
