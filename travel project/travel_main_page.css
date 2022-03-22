@@ -1,12 +1,24 @@
+html {
+  margin: 0;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.25) 100%
-    ),
-    url("space.jpeg");
-  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin: 0;
+}
+
+video {
+  position: absolute;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  width: 100%;
+  width: auto;
   margin: 0;
 }
 
@@ -14,113 +26,131 @@ body {
   display: none;
 }
 
+#bird {
+  position: relative;
+  display: flex;
+}
+
 .title {
+  transform: rotate(-90deg);
+  position: fixed;
   font-family: "Oswald", sans-serif;
-  font-size: 80px;
+  font-size: 30px;
+  color: black;
+  padding: 5px;
+  top: 1rem;
+  left: -1rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 1;
+}
+
+hr {
+  width: 40%;
+  height: 2px;
+  background-color: white;
 }
 
 main {
-  width: 100%;
-  color: white;
   position: relative;
+  width: 40%;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  margin: auto;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+main p {
+  text-align: center;
 }
 
 h1 {
-  color: black;
+  color: rgba(255, 255, 255);
+  text-shadow: black 5px 5px 5px;
   font-size: 50px;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(12, 5, 5, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
     0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
     0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
-#p1 {
-  position: relative;
-  top: 1000px;
-  animation-name: toTop;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-#p2 {
-  position: relative;
-  top: 1000px;
-  animation-name: toTop;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
+button {
+  margin: 5rem;
+  width: 160px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  transform: scale(1.5);
 }
 
-#p3 {
-  position: relative;
-  top: 1000px;
-  animation-name: toTop;
-  animation-duration: 2s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+button,
+button span {
+  transition: 200ms;
 }
 
-#p4 {
-  position: relative;
-  top: 1000px;
-  animation-name: toTop;
-  animation-duration: 2s;
-  animation-delay: 1.5s;
-  animation-fill-mode: forwards;
+button .text {
+  transform: translateX(20px);
+  color: black;
+  font-weight: bold;
 }
 
-@keyframes toTop {
-  0% {
-    top: 1000px;
-  }
-  100% {
-    top: 0px;
-  }
-}
-
-.earth {
-  background-image: url("earth.png");
-  background-repeat: repeat-x;
-  background-size: 75%;
-  background-position: center;
-  animation: 400s para infinite linear;
-  height: 100%;
-  width: 100%;
+button .icon {
+  color: black;
   position: absolute;
-  opacity: 0.3;
+  border-left: 1px solid #1b1079;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: #1b1079;
+}
+
+button:hover .text {
+  color: transparent;
+}
+
+button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+  color: white;
+}
+
+button:focus {
+  outline: none;
 }
 
 @keyframes para {
   100% {
     background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
       400px 0;
-  }
-}
-
-@keyframes opacityLow {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.7;
-  }
-}
-
-@keyframes opacityHigh {
-  from {
-    opacity: 0.7;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -133,26 +163,24 @@ h1 {
 }
 
 .countries {
-  position: relative;
-  top: 10rem;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 20rem;
+  width: 50%;
   height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
 .continent {
   position: relative;
-  width: 20%;
+  width: 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  top: 50px;
-  margin-top: 50px;
 }
 
 .container-top {
@@ -163,169 +191,115 @@ h1 {
   width: 100%;
   height: 10rem;
   border-radius: 16px;
+  font-size: 1.8rem;
+
+  background-color: white;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  font-size: 1.8rem;
-  box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999,
-    4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
-  background-color: white;
-}
-
-#ovni {
-  position: absolute;
-  width: 10%;
-  bottom: 50%;
-  right: 50%;
-}
-
-@keyframes goEurope {
-  to {
-    right: 85%;
-  }
-}
-
-@keyframes goOceania {
-  to {
-    right: 60%;
-  }
-}
-
-@keyframes goSouthAmerica {
-  to {
-    right: 40%;
-  }
-}
-
-@keyframes goAsia {
-  to {
-    right: 15%;
-  }
 }
 
 .europe-background {
-  background: linear-gradient(
-    to bottom,
-    hsla(101, 78%, 64%, 0.75) 0%,
-    #ffffff 100%
-  );
+  background: url("europe.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .europe {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("europe.jpg");
-  background-size: cover;
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
   border-radius: 16px;
-  transition: all 2s;
 }
 
 .oceania-background {
-  background: linear-gradient(
-    to bottom,
-    hsla(204, 78%, 64%, 0.75) 0%,
-    #ffffff 100%
-  );
+  background: url("oceania.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .oceania {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("oceania.jpg");
-  background-size: cover;
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
   border-radius: 16px;
 }
 
 .southAmerica-background {
-  background: linear-gradient(
-    to bottom,
-    hsla(34, 78%, 64%, 0.75) 0%,
-    #ffffff 100%
-  );
+  background: url("southAmerica.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .southAmerica {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("southAmerica.jpg");
-  background-size: cover;
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
   border-radius: 16px;
 }
 
 .asia-background {
-  background: linear-gradient(
-    to bottom,
-    hsla(0, 78%, 64%, 0.75) 0%,
-    #ffffff 100%
-  );
+  background: url("asia.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .asia {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("asia.jpg");
-  background-size: cover;
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
   border-radius: 16px;
 }
 
+#continent-europe,
+#continent-oceania,
+#continent-southAmerica,
+#continent-asia {
+  transform: scale(0.75);
+}
+
 .container-bottom {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  height: 30rem;
   width: 100%;
   border: 2px solid white;
   background-color: white;
   border-radius: 16px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  padding-top: 2%;
-  padding-bottom: 2%;
+
   font-size: 1.4rem;
   font-weight: bolder;
-  box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999,
-    4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
 }
 
 @keyframes country-develop {
   from {
-    width: 20%;
+    display: none;
   }
   to {
-    width: 90%;
-  }
-}
-
-@keyframes country-rotation {
-  from {
-    transform: rotate(-90deg);
-  }
-  to {
-    transform: rotate(0deg);
+    display: flex;
   }
 }
 
@@ -340,80 +314,63 @@ h1 {
 
 .spain {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("spain.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 45%;
-  height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-left-radius: 16px;
+  border-right: 2px solid white;
+  padding: 0;
 }
 
 .spain p {
-  position: absolute;
-  transform: rotate(-90deg);
-  color: rgba(255, 255, 255);
-  text-shadow: black 5px 5px 5px;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .greece {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("greece.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
-  background-position: 55%;
+  background-position: center;
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-right-radius: 16px;
+  border-left: 2px solid white;
 }
 
 .greece p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .australia {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("australia.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 55%;
   height: 100%;
@@ -421,31 +378,24 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-left-radius: 16px;
+  border-right: 2px solid white;
 }
 
 .australia p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .new-caledonia {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("new-caledonia.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 55%;
   height: 100%;
@@ -453,32 +403,25 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-right-radius: 16px;
+  border-left: 2px solid white;
 }
 
 .new-caledonia p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
 }
 
 .chile {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("chile.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 55%;
   height: 100%;
@@ -486,31 +429,24 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-left-radius: 16px;
+  border-right: 2px solid white;
 }
 
 .chile p {
-  transform: rotate(-90deg);
-  color: rgb(255, 255, 255);
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .costa-rica {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("costa-rica.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 50%;
   height: 100%;
@@ -518,32 +454,26 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-right-radius: 16px;
+  border-left: 2px solid white;
 }
 
 .costa-rica p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+
   white-space: nowrap;
 }
 
 .thailand {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("thailand.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 50%;
   height: 100%;
@@ -551,32 +481,26 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-left-radius: 16px;
+  border-right: 2px solid white;
 }
 
 .thailand p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+
   white-space: nowrap;
 }
 
 .united-arab-emirates {
   background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.5) 80%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    url("dubai.jpg");
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   background-size: cover;
   background-position: 50%;
   height: 100%;
@@ -584,18 +508,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  border-bottom-right-radius: 16px;
+  border-left: 2px solid white;
 }
 
 .united-arab-emirates p {
-  transform: rotate(-90deg);
-  color: white;
-  font-size: 50px;
+  color: rgb(0, 0, 0);
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+
   white-space: nowrap;
 }

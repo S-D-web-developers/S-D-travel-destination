@@ -8,43 +8,46 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="travel_main_page.css" />
   <title>S&D travel destinations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
 
-  <div class="earth"> </div>
+
+  <video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <div class="title"> S&D </div>
   <main>
 
 
-    <div class="title">S&D</div>
-    <i>Find the country where you will be happy!</i>
-    <p id="p1">
-      Are you looking for the ideal destination where you can build and live a
-    </p>
-    <p id="p2">
-      Well, you're not the only one. We also have been looking and luckily for
-      you, we found a few places that might be perfect for you... or almost!
-    </p>
-    <p id="p3">Somewhere where the temperature is not too cold, but also not too hot,
-      where the main spoken language is quite easy to learn, the education
-      system is great and affordable, and where the quality of life is
-      overall...well...qualitative!
-    </p>
-    <p id="p4">We are S&D and we <i>searched</i> the top countries to live in, so you
-      can <i>dive</i> in!
-    </p>
+    <br><br>
 
-    <lottie-player id="arrow" src="https://assets1.lottiefiles.com/packages/lf20_euocqczq.json" background="transparent"
-      speed="1" style="width: 300px; height: 300px; display:none;" loop autoplay></lottie-player>
 
+    <lottie-player id="bird" src="https://assets7.lottiefiles.com/packages/lf20_WAMQ5G.json" background="transparent"
+      speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    <hr>
+    <br>
+
+    <p>
+      Are you looking for the ideal destination where you can build and live a happy life? <br>Well, you're not the
+      only one. We also have been looking and luckily for you, we found a few places that might be perfect for
+      you...
+      or almost!<br>We compiled the best countries in here, following a few important criterias: the safety, the
+      climate, the living price, etc...! <br><br>We are S&D and we searched the top
+      countries to live in, so you can dive in!
+    </p><br>
+    <hr>
+    <button class="noselect"><span class='text'>I am ready!</span><span class="icon">
+        <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_nsqfzxxx.json" background="transparent"
+          speed="1" hover></lottie-player>
+      </span></button>
   </main>
 
   <section class="countries">
-    <lottie-player id="ovni" src="https://assets3.lottiefiles.com/packages/lf20_cgbjomca.json" background="transparent"
-      speed="1" loop autoplay></lottie-player>
 
     <section class="continent europe" id="continent-europe">
       <div class="container-top europe-background">
@@ -64,7 +67,7 @@
     </section>
 
 
-    <section class="continent oceania">
+    <section class="continent oceania" id="continent-oceania">
       <div class="container-top oceania-background">
         <h1>Oceania</h1>
       </div>
@@ -80,7 +83,7 @@
       </section>
     </section>
 
-    <section class="continent south-america">
+    <section class="continent south-america" id="continent-southAmerica">
       <div class="container-top southAmerica-background">
         <h1>South America</h1>
       </div>
@@ -95,7 +98,7 @@
       </section>
     </section>
 
-    <section class="continent asia">
+    <section class="continent asia" id="continent-asia">
       <div class="container-top asia-background">
         <h1>Asia</h1>
       </div>
