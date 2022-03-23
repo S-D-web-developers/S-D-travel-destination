@@ -20,11 +20,34 @@ const uae = document.querySelector(".united-arab-emirates");
 
 const main = document.querySelector("main");
 const continent = document.querySelector(".continent");
+const countries = document.querySelector(".countries");
+const btnReady = document.querySelector(".btn");
+const containerBottomEurope = document.querySelector("#europe");
+const containerBottomOceania = document.querySelector("#oceania");
+const containerBottomSouthAmerica = document.querySelector("#southAmerica");
+const containerBottomAsia = document.querySelector("#asia");
+
+const boxContinentEurope = document.querySelector("#continent-europe");
+const boxContinentOceania = document.querySelector("#continent-oceania");
+const boxContinentSouthAmerica = document.querySelector(
+  "#continent-southAmerica"
+);
+const boxContinentSouthAsia = document.querySelector("#continent-asia");
 
 let clickEurope = false;
 let clickOceania = false;
 let clickSouthAmerica = false;
 let clickAsia = false;
+
+btnReady.addEventListener("click", function () {
+  countries.style.animationName = "move-countries";
+  countries.style.animationDuration = "1s";
+  countries.style.animationFillMode = "forwards";
+  countries.style.animationDelay = "0.5s";
+  main.style.animationName = "move-main";
+  main.style.animationDuration = "3s";
+  main.style.animationFillMode = "forwards";
+});
 
 europe.style.removeProperty("background");
 
@@ -37,21 +60,12 @@ europe.addEventListener("mouseout", function () {
 
 europe.addEventListener("click", function () {
   clickEurope = true;
-  europe.style.animationName = "country-develop";
-  europe.style.animationDuration = "4s";
-  europe.style.animationFillMode = "forwards";
-  spain.querySelector("p").style.animationName = "country-position";
-  spain.querySelector("p").style.animationDuration = "4s";
-  spain.querySelector("p").style.animationFillMode = "forwards";
-  spain.querySelector("p").style.animationName = "country-rotation";
-  spain.querySelector("p").style.animationDuration = "4s";
-  spain.querySelector("p").style.animationFillMode = "forwards";
-  greece.querySelector("p").style.animationName = "country-position";
-  greece.querySelector("p").style.animationDuration = "4s";
-  greece.querySelector("p").style.animationFillMode = "forwards";
-  greece.querySelector("p").style.animationName = "country-rotation";
-  greece.querySelector("p").style.animationDuration = "4s";
-  greece.querySelector("p").style.animationFillMode = "forwards";
+  containerBottomEurope.style.animationName = "country-develop";
+  containerBottomEurope.style.animationDuration = "4s";
+  containerBottomEurope.style.animationFillMode = "forwards";
+  boxContinentEurope.style.animationName = "width-box-continent";
+  boxContinentEurope.style.animationDuration = "4s";
+  boxContinentEurope.style.animationFillMode = "forwards";
 });
 
 oceania.addEventListener("mouseover", function () {});
@@ -67,18 +81,6 @@ oceania.addEventListener("click", function () {
   oceania.style.animationName = "country-develop";
   oceania.style.animationDuration = "4s";
   oceania.style.animationFillMode = "forwards";
-  australia.style.animationName = "country-position";
-  australia.style.animationDuration = "4s";
-  australia.style.animationFillMode = "forwards";
-  australia.querySelector("p").style.animationName = "country-rotation";
-  australia.querySelector("p").style.animationDuration = "4s";
-  australia.querySelector("p").style.animationFillMode = "forwards";
-  newCaledonia.style.animationName = "country-position";
-  newCaledonia.style.animationDuration = "4s";
-  newCaledonia.style.animationFillMode = "forwards";
-  newCaledonia.querySelector("p").style.animationName = "country-rotation";
-  newCaledonia.querySelector("p").style.animationDuration = "4s";
-  newCaledonia.querySelector("p").style.animationFillMode = "forwards";
 });
 
 southAmerica.addEventListener("mouseover", function () {});
@@ -94,18 +96,6 @@ southAmerica.addEventListener("click", function () {
   southAmerica.style.animationName = "country-develop";
   southAmerica.style.animationDuration = "4s";
   southAmerica.style.animationFillMode = "forwards";
-  chile.style.animationName = "country-position";
-  chile.style.animationDuration = "4s";
-  chile.style.animationFillMode = "forwards";
-  chile.querySelector("p").style.animationName = "country-rotation";
-  chile.querySelector("p").style.animationDuration = "4s";
-  chile.querySelector("p").style.animationFillMode = "forwards";
-  costaRica.style.animationName = "country-position";
-  costaRica.style.animationDuration = "4s";
-  costaRica.style.animationFillMode = "forwards";
-  costaRica.querySelector("p").style.animationName = "country-rotation";
-  costaRica.querySelector("p").style.animationDuration = "4s";
-  costaRica.querySelector("p").style.animationFillMode = "forwards";
 });
 
 asia.addEventListener("mouseover", function () {});
@@ -121,16 +111,4 @@ asia.addEventListener("click", function () {
   asia.style.animationName = "country-develop";
   asia.style.animationDuration = "4s";
   asia.style.animationFillMode = "forwards";
-  thailand.style.animationName = "country-position";
-  thailand.style.animationDuration = "4s";
-  thailand.style.animationFillMode = "forwards";
-  thailand.querySelector("p").style.animationName = "country-rotation";
-  thailand.querySelector("p").style.animationDuration = "4s";
-  thailand.querySelector("p").style.animationFillMode = "forwards";
-  uae.style.animationName = "country-position";
-  uae.style.animationDuration = "4s";
-  uae.style.animationFillMode = "forwards";
-  uae.querySelector("p").style.animationName = "country-rotation";
-  uae.querySelector("p").style.animationDuration = "4s";
-  uae.querySelector("p").style.animationFillMode = "forwards";
 });

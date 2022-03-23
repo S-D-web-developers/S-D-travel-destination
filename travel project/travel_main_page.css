@@ -1,32 +1,41 @@
 html {
   margin: 0;
+  padding: 0;
+  height: 150%;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
   position: relative;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 video {
-  position: absolute;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
   min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  width: 100%;
-  width: auto;
-  margin: 0;
 }
 
 .hidden {
   display: none;
 }
 
-#bird {
+#walker {
   position: relative;
   display: flex;
 }
@@ -56,18 +65,44 @@ hr {
 
 main {
   position: relative;
-  width: 40%;
+  width: 50%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  font-size: 25px;
+  font-size: 24px;
+  /*animation: move-main 5s forwards;*/
+}
+
+@keyframes move-main {
+  to {
+    transform: translateX(-150rem);
+    width: 0%;
+    transition: width 0.25s ease-in;
+  }
 }
 
 main p {
   text-align: center;
+}
+
+ul {
+  font-size: 22px;
+  color: #4068ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+li {
+  display: block;
+  background-color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 16px;
+  white-space: nowrap;
 }
 
 h1 {
@@ -82,7 +117,7 @@ h1 {
     0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
-.noselect {
+.btn {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -111,7 +146,8 @@ button span {
 }
 
 button .text {
-  transform: translateX(20px);
+  font-family: "Montserrat", sans-serif;
+  transform: translateX(30px);
   color: black;
   font-weight: bold;
 }
@@ -119,10 +155,9 @@ button .text {
 button .icon {
   color: black;
   position: absolute;
-  border-left: 1px solid #1b1079;
-  transform: translateX(110px);
+  transform: translateX(50px) translateY(-10px);
   height: 40px;
-  width: 40px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,7 +174,9 @@ button:hover .text {
 button:hover .icon {
   width: 150px;
   border-left: none;
-  transform: translateX(0);
+  transform: translateX(5px) translateY(-10px);
+  display: flex;
+  align-items: center;
   color: white;
 }
 
@@ -163,22 +200,33 @@ button:focus {
 }
 
 .countries {
-  width: 50%;
-  height: 100%;
+  width: 40%;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
-  align-items: center;
+  align-items: space-around;
+  filter: grayscale(80%);
+}
+
+@keyframes move-countries {
+  from {
+    filter: grayscale(80%);
+  }
+  to {
+    filter: unset;
+    width: 100%;
+    transition: width 0.25s ease-in;
+  }
 }
 
 .continent {
   position: relative;
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-around;
   justify-content: center;
   cursor: pointer;
 }
@@ -277,6 +325,16 @@ button:focus {
   transform: scale(0.75);
 }
 
+@keyframes width-box-continent {
+  to {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 200%; */
+  }
+}
+
 .container-bottom {
   position: relative;
   display: flex;
@@ -289,26 +347,15 @@ button:focus {
   border-radius: 16px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-
+  height: 4rem;
   font-size: 1.4rem;
   font-weight: bolder;
 }
 
 @keyframes country-develop {
-  from {
-    display: none;
-  }
   to {
-    display: flex;
-  }
-}
-
-@keyframes country-position {
-  from {
-    text-align: center;
-  }
-  to {
-    text-align: top;
+    height: 14rem;
+    transition: height 0.25s ease-in;
   }
 }
 
