@@ -1,20 +1,8 @@
-html {
-  margin: 0;
-  padding: 0;
-  height: 150%;
-}
-
+html,
 body {
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
   margin: 0;
   padding: 0;
-  height: 100%;
-  min-height: 100%;
+  min-height: 80vh;
 }
 
 *,
@@ -27,8 +15,18 @@ video {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.structure {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
@@ -65,18 +63,20 @@ hr {
 
 main {
   position: relative;
-  width: 50%;
+  width: 43%;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 24px;
-  /*animation: move-main 5s forwards;*/
 }
 
 @keyframes move-main {
+  from {
+    width: 43%;
+  }
   to {
     transform: translateX(-150rem);
     width: 0%;
@@ -203,9 +203,9 @@ button:focus {
   width: 40%;
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: column;
-  align-items: space-around;
+  align-items: center;
   filter: grayscale(80%);
 }
 
@@ -217,13 +217,27 @@ button:focus {
     filter: unset;
     width: 100%;
     transition: width 0.25s ease-in;
+    height: 50%;
+    margin-top: 10%;
+  }
+}
+
+.choose {
+  display: none;
+  color: white;
+  opacity: 0;
+}
+
+@keyframes chooseAnim {
+  to {
+    opacity: 1;
+    font-size: 25px;
   }
 }
 
 .continent {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: space-around;
@@ -354,26 +368,18 @@ button:focus {
 
 @keyframes country-develop {
   to {
-    height: 14rem;
+    height: 30rem;
     transition: height 0.25s ease-in;
   }
 }
 
 .spain {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
   background-position: 45%;
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-left-radius: 16px;
   border-right: 2px solid white;
   padding: 0;
@@ -382,6 +388,23 @@ button:focus {
 .spain p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
+}
+
+@keyframes spainBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("spain.jpg");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+  }
 }
 
 .greece {
@@ -399,7 +422,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-right-radius: 16px;
   border-left: 2px solid white;
 }
@@ -407,6 +430,23 @@ button:focus {
 .greece p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
+}
+
+@keyframes greeceBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("greece.jpg");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+  }
 }
 
 .australia {
@@ -424,7 +464,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-left-radius: 16px;
   border-right: 2px solid white;
 }
@@ -432,6 +472,24 @@ button:focus {
 .australia p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
+}
+
+@keyframes australiaBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("australia.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
 
 .new-caledonia {
@@ -449,7 +507,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-right-radius: 16px;
   border-left: 2px solid white;
 }
@@ -458,6 +516,24 @@ button:focus {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
   white-space: nowrap;
+}
+
+@keyframes newCaledoniaBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("new-caledonia.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
 
 .chile {
@@ -475,7 +551,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-left-radius: 16px;
   border-right: 2px solid white;
 }
@@ -483,6 +559,24 @@ button:focus {
 .chile p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
+}
+
+@keyframes chileBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("chile.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
 
 .costa-rica {
@@ -500,7 +594,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-right-radius: 16px;
   border-left: 2px solid white;
 }
@@ -510,6 +604,24 @@ button:focus {
   letter-spacing: 2px;
 
   white-space: nowrap;
+}
+
+@keyframes costaRicaBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("costa-rica.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
 
 .thailand {
@@ -527,7 +639,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-left-radius: 16px;
   border-right: 2px solid white;
 }
@@ -537,6 +649,24 @@ button:focus {
   letter-spacing: 2px;
 
   white-space: nowrap;
+}
+
+@keyframes thailandBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("thailand.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
 
 .united-arab-emirates {
@@ -554,7 +684,7 @@ button:focus {
   width: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   border-bottom-right-radius: 16px;
   border-left: 2px solid white;
 }
@@ -564,4 +694,22 @@ button:focus {
   letter-spacing: 2px;
 
   white-space: nowrap;
+}
+
+@keyframes uaeBg {
+  to {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url("dubai.jpg");
+    background-size: cover;
+    height: 100%;
+    transition: all 1s ease-in;
+    background-position: center;
+  }
 }
