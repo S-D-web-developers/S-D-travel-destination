@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 80vh;
+  font-weight:400;
 }
 
 *,
@@ -88,15 +90,16 @@ main p {
   text-align: center;
 }
 
-ul {
+main ul {
   font-size: 22px;
   color: #4068ee;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
-li {
+main li {
   display: block;
   background-color: white;
   padding: 10px;
@@ -254,11 +257,38 @@ button:focus {
   height: 10rem;
   border-radius: 16px;
   font-size: 1.8rem;
-
   background-color: white;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
+.t1 {
+  opacity:0;
+  display:none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height:100%;
+  width:80%;
+}
+
+.t1 li {
+  position:relative;
+  display:flex;
+  margin-bottom:2rem;
+  font-size:25px;
+}
+
+@keyframes add-table{
+  from {
+
+  opacity:0;
+  }
+  to {
+    opacity: 1;
+    transition: all 0.25s ease-in;
+  }
+};
 
 .europe-background {
   background: url("europe.jpg");
@@ -362,13 +392,14 @@ button:focus {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   height: 4rem;
-  font-size: 1.4rem;
-  font-weight: bolder;
+  font-size: 1.8rem;
 }
+
+
 
 @keyframes country-develop {
   to {
-    height: 30rem;
+    height: 40rem;
     transition: height 0.25s ease-in;
   }
 }
@@ -378,10 +409,10 @@ button:focus {
   background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-left-radius: 16px;
-  border-right: 2px solid white;
   padding: 0;
 }
 
@@ -424,7 +455,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-right-radius: 16px;
-  border-left: 2px solid white;
+
 }
 
 .greece p {
@@ -466,7 +497,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-left-radius: 16px;
-  border-right: 2px solid white;
+  
 }
 
 .australia p {
@@ -509,7 +540,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-right-radius: 16px;
-  border-left: 2px solid white;
+  
 }
 
 .new-caledonia p {
@@ -553,7 +584,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-left-radius: 16px;
-  border-right: 2px solid white;
+  
 }
 
 .chile p {
@@ -596,7 +627,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-right-radius: 16px;
-  border-left: 2px solid white;
+  
 }
 
 .costa-rica p {
@@ -641,7 +672,7 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-left-radius: 16px;
-  border-right: 2px solid white;
+  
 }
 
 .thailand p {
@@ -686,13 +717,12 @@ button:focus {
   justify-content: center;
   align-items: flex-start;
   border-bottom-right-radius: 16px;
-  border-left: 2px solid white;
+  
 }
 
 .united-arab-emirates p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
-
   white-space: nowrap;
 }
 
@@ -712,4 +742,27 @@ button:focus {
     transition: all 1s ease-in;
     background-position: center;
   }
+}
+
+.cost {
+  color:white;
+  border-radius:16px;
+  position:relative;
+  width:300px;
+  background-color:rgb(255, 255, 255);
+}
+
+.bar1 {
+  background-color: red;
+  width:50%;
+  border-radius:16px;
+  text-align:right;
+}
+
+.bar2 {
+  background-color: green;
+  width:80%;
+  border-radius:16px;
+  text-align:right;
+
 }

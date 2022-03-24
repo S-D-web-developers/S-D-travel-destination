@@ -19,6 +19,7 @@ const thailand = document.querySelector(".thailand");
 const uae = document.querySelector(".united-arab-emirates");
 
 const main = document.querySelector("main");
+const table = document.querySelector(".t1")
 const choose = document.querySelector(".choose");
 const continent = document.querySelector(".continent");
 const countries = document.querySelector(".countries");
@@ -35,6 +36,8 @@ const boxContinentSouthAmerica = document.querySelector(
 );
 const boxContinentSouthAsia = document.querySelector("#continent-asia");
 
+
+
 let click = false;
 let clickEurope = false;
 let clickOceania = false;
@@ -50,7 +53,6 @@ btnReady.addEventListener("click", function () {
   main.style.animationName = "move-main";
   main.style.animationDuration = "2s";
   main.style.animationFillMode = "forwards";
-  choose.style.display = "unset";
   choose.style.animationName = "chooseAnim";
   choose.style.animationDuration = "3s";
   choose.style.animationFillMode = "forwards";
@@ -77,6 +79,11 @@ europe.addEventListener("click", function () {
     greece.style.animationName = "greeceBg";
     greece.style.animationDuration = "0.1s";
     greece.style.animationFillMode = "forwards";
+    table.style.display = 'flex';
+    table.style.animationName = "add-table";
+    table.style.animationDuration = "2s";
+    table.style.animationFillMode = "forwards";
+    
   }
 });
 
