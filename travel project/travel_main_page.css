@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 80vh;
-  font-weight:400;
+  font-weight: 400;
+  background-image: linear-gradient(to bottom, #0093e9 0%, #80d0c7 80%);
 }
 
 *,
@@ -13,12 +14,36 @@ body {
   box-sizing: inherit;
 }
 
-video {
-  position: fixed;
-  right: 0;
+.background {
+  position: absolute;
+  opacity: 0.5;
   bottom: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  display: none;
+}
+
+.top {
+  opacity: 0;
+  text-shadow: #4068ee 1px 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.help {
+  color: #4068ee;
+  margin-left: 20px;
+  font-size: 20px;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .structure {
@@ -41,14 +66,16 @@ video {
 }
 
 .title {
-  transform: rotate(-90deg);
   position: fixed;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   color: black;
   padding: 5px;
+  transform: rotate(-90deg);
   top: 1rem;
   left: -1rem;
+  text-align: center;
+  opacity: 0.9;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
@@ -61,6 +88,7 @@ hr {
   width: 40%;
   height: 2px;
   background-color: white;
+  border: none;
 }
 
 main {
@@ -96,7 +124,6 @@ main ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 main li {
@@ -110,14 +137,14 @@ main li {
 
 h1 {
   color: rgba(255, 255, 255);
-  text-shadow: black 5px 5px 5px;
+  text-shadow: #4068ee 1px 0 10px;
   font-size: 50px;
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 0 #4068ee, 0 2px 0 #4068ee, 0 3px 0 #4068ee,
+    0 4px 0 #4068ee, 0 5px 0 #4068ee, 0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn {
@@ -139,6 +166,7 @@ button {
   align-items: center;
   background: white;
   border: none;
+
   border-radius: 5px;
   transform: scale(1.5);
 }
@@ -194,14 +222,6 @@ button:focus {
   }
 }
 
-.background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  opacity: 0.5;
-}
-
 .countries {
   width: 40%;
   position: relative;
@@ -226,9 +246,7 @@ button:focus {
 }
 
 .choose {
-  display: none;
   color: white;
-  opacity: 0;
 }
 
 @keyframes chooseAnim {
@@ -241,11 +259,21 @@ button:focus {
 .continent {
   position: relative;
   width: 100%;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: space-around;
   justify-content: center;
   cursor: pointer;
+}
+
+@keyframes continent-moves {
+  50% {
+    box-shadow: 0px 10px 80px 00px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0px 10px 30px 00px rgba(255, 255, 255, 0.25);
+  }
 }
 
 .container-top {
@@ -262,33 +290,38 @@ button:focus {
   border-bottom-right-radius: 0;
 }
 
-.t1 {
-  opacity:0;
-  display:none;
+.t1,
+.t2,
+.t3,
+.t4 {
+  opacity: 0;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height:100%;
-  width:80%;
+  height: 100%;
+  width: 80%;
 }
 
-.t1 li {
-  position:relative;
-  display:flex;
-  margin-bottom:2rem;
-  font-size:25px;
+.t1 li,
+.t2 li,
+.t3 li,
+.t4 li {
+  position: relative;
+  display: flex;
+  margin-bottom: 2rem;
+  font-size: 25px;
 }
 
-@keyframes add-table{
+@keyframes add-table {
   from {
-
-  opacity:0;
+    opacity: 0;
   }
   to {
     opacity: 1;
     transition: all 0.25s ease-in;
   }
-};
+}
 
 .europe-background {
   background: url("europe.jpg");
@@ -367,16 +400,8 @@ button:focus {
 #continent-southAmerica,
 #continent-asia {
   transform: scale(0.75);
-}
-
-@keyframes width-box-continent {
-  to {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    width: 200%; */
-  }
+  box-shadow: 0px 10px 30px 00px rgba(255, 255, 255, 0.25);
+  animation: continent-moves 5s infinite;
 }
 
 .container-bottom {
@@ -395,8 +420,6 @@ button:focus {
   font-size: 1.8rem;
 }
 
-
-
 @keyframes country-develop {
   to {
     height: 40rem;
@@ -409,7 +432,7 @@ button:focus {
   background-position: 45%;
   width: 50%;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   border-bottom-left-radius: 16px;
@@ -438,32 +461,23 @@ button:focus {
   }
 }
 
-.greece {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
+.portugal {
   background-size: cover;
-  background-position: center;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-right-radius: 16px;
-
 }
 
-.greece p {
+.portugal p {
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
 }
 
-@keyframes greeceBg {
+@keyframes portugalBg {
   to {
     background: linear-gradient(
         to bottom,
@@ -473,7 +487,7 @@ button:focus {
         rgba(255, 255, 255, 0.8) 80%,
         rgba(255, 255, 255, 1) 100%
       ),
-      url("greece.jpg");
+      url("portugal.jpg");
     background-size: cover;
     height: 100%;
     background-position: center;
@@ -481,23 +495,14 @@ button:focus {
 }
 
 .australia {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 55%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-left-radius: 16px;
-  
 }
 
 .australia p {
@@ -524,23 +529,14 @@ button:focus {
 }
 
 .new-caledonia {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 55%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-right-radius: 16px;
-  
 }
 
 .new-caledonia p {
@@ -568,23 +564,14 @@ button:focus {
 }
 
 .chile {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 55%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-left-radius: 16px;
-  
 }
 
 .chile p {
@@ -611,23 +598,14 @@ button:focus {
 }
 
 .costa-rica {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 50%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-right-radius: 16px;
-  
 }
 
 .costa-rica p {
@@ -651,28 +629,19 @@ button:focus {
     background-size: cover;
     height: 100%;
     transition: all 1s ease-in;
-    background-position: center;
+    background-position: top;
   }
 }
 
 .thailand {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 50%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-left-radius: 16px;
-  
 }
 
 .thailand p {
@@ -701,23 +670,14 @@ button:focus {
 }
 
 .united-arab-emirates {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
   background-size: cover;
-  background-position: 50%;
-  height: 100%;
+  background-position: 45%;
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom-right-radius: 16px;
-  
 }
 
 .united-arab-emirates p {
@@ -745,24 +705,23 @@ button:focus {
 }
 
 .cost {
-  color:white;
-  border-radius:16px;
-  position:relative;
-  width:300px;
-  background-color:rgb(255, 255, 255);
+  color: white;
+  border-radius: 16px;
+  position: relative;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
 }
 
 .bar1 {
   background-color: red;
-  width:50%;
-  border-radius:16px;
-  text-align:right;
+  width: 50%;
+  border-radius: 16px;
+  text-align: right;
 }
 
 .bar2 {
   background-color: green;
-  width:80%;
-  border-radius:16px;
-  text-align:right;
-
+  width: 80%;
+  border-radius: 16px;
+  text-align: right;
 }
