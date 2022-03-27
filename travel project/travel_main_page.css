@@ -18,11 +18,18 @@ body {
   width: 100%;
   background-image: linear-gradient(
     to bottom,
-    #006fff,
-    #3470ff,
-    #4b70ff,
-    #5d71ff,
-    #6b72ff
+    #6b70d1,
+    #6d7bd6,
+    #7186db,
+    #7691df,
+    #7c9be3,
+    #74a7ec,
+    #6db3f3,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
   );
 }
 
