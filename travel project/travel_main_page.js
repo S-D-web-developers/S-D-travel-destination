@@ -19,10 +19,14 @@ const thailand = document.querySelector(".thailand");
 const uae = document.querySelector(".united-arab-emirates");
 
 const main = document.querySelector("main");
-const table1 = document.querySelector(".t1");
-const table2 = document.querySelector(".t2");
-const table3 = document.querySelector(".t3");
-const table4 = document.querySelector(".t4");
+const tableSpain = document.querySelector(".tSpain");
+const tablePortugal = document.querySelector(".tPortugal");
+const tableAustralia = document.querySelector(".tAustralia");
+const tableNewCaledonia = document.querySelector(".tNewCaledonia");
+const tableChile = document.querySelector(".tChile");
+const tableCostaRica = document.querySelector(".tCostaRica");
+const tableThailand = document.querySelector(".tThailand");
+const tableUae = document.querySelector(".tUae");
 const choose = document.querySelector(".top");
 const title = document.querySelector(".title");
 const continent = document.querySelector(".continent");
@@ -65,6 +69,9 @@ function clicked() {
   boxContinentSouthAmerica.style.boxShadow = "unset";
   boxContinentSouthAsia.style.animation = "none";
   boxContinentSouthAsia.style.boxShadow = "unset";
+  document.querySelector("body").style.animationName = "bgChange";
+  document.querySelector("body").style.animationDuration = "5s";
+  document.querySelector("body").style.animationFillMode = "forwards";
 }
 
 btnReady.onclick = function () {
@@ -92,10 +99,14 @@ europe.addEventListener("click", function () {
   portugal.style.animationName = "portugalBg";
   portugal.style.animationDuration = "0.1s";
   portugal.style.animationFillMode = "forwards";
-  table1.style.display = "flex";
-  table1.style.animationName = "add-table";
-  table1.style.animationDuration = "2s";
-  table1.style.animationFillMode = "forwards";
+  tableSpain.style.display = "flex";
+  tableSpain.style.animationName = "add-table";
+  tableSpain.style.animationDuration = "2s";
+  tableSpain.style.animationFillMode = "forwards";
+  tablePortugal.style.display = "flex";
+  tablePortugal.style.animationName = "add-table";
+  tablePortugal.style.animationDuration = "2s";
+  tablePortugal.style.animationFillMode = "forwards";
 });
 
 oceania.addEventListener("mouseover", function () {});
@@ -123,6 +134,14 @@ oceania.addEventListener("click", function () {
   table2.style.animationName = "add-table";
   table2.style.animationDuration = "2s";
   table2.style.animationFillMode = "forwards";
+  tableAustralia.style.display = "flex";
+  tableAustralia.style.animationName = "add-table";
+  tableAustralia.style.animationDuration = "2s";
+  tableAustralia.style.animationFillMode = "forwards";
+  tableNewCaledonia.style.display = "flex";
+  tableNewCaledonia.style.animationName = "add-table";
+  tableNewCaledonia.style.animationDuration = "2s";
+  tableNewCaledonia.style.animationFillMode = "forwards";
 });
 
 southAmerica.addEventListener("mouseover", function () {});
@@ -146,6 +165,14 @@ southAmerica.addEventListener("click", function () {
   costaRica.style.animationName = "costaRicaBg";
   costaRica.style.animationDuration = "0.1s";
   costaRica.style.animationFillMode = "forwards";
+  tableChile.style.display = "flex";
+  tableChile.style.animationName = "add-table";
+  tableChile.style.animationDuration = "2s";
+  tableChile.style.animationFillMode = "forwards";
+  tableCostaRica.style.display = "flex";
+  tableCostaRica.style.animationName = "add-table";
+  tableCostaRica.style.animationDuration = "2s";
+  tableCostaRica.style.animationFillMode = "forwards";
 });
 
 asia.addEventListener("mouseover", function () {});
@@ -169,4 +196,12 @@ asia.addEventListener("click", function () {
   uae.style.animationName = "uaeBg";
   uae.style.animationDuration = "0.1s";
   uae.style.animationFillMode = "forwards";
+  tableThailand.style.display = "flex";
+  tableThailand.style.animationName = "add-table";
+  tableThailand.style.animationDuration = "2s";
+  tableThailand.style.animationFillMode = "forwards";
+  tableUae.style.display = "flex";
+  tableUae.style.animationName = "add-table";
+  tableUae.style.animationDuration = "2s";
+  tableUae.style.animationFillMode = "forwards";
 });
