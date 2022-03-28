@@ -19,6 +19,12 @@ const thailand = document.querySelector(".thailand");
 const uae = document.querySelector(".united-arab-emirates");
 
 const main = document.querySelector("main");
+const btnOpenInfo = document.querySelector(".help")
+const btnCloseInfo = document.querySelector('.closeBox')
+const dots = document.querySelector('.dots')
+const dot = document.getElementById('dot')
+const back = document.querySelector('.back')
+const infoBox = document.querySelector(".infoBox")
 const tableSpain = document.querySelector(".tSpain");
 const tablePortugal = document.querySelector(".tPortugal");
 const tableAustralia = document.querySelector(".tAustralia");
@@ -42,7 +48,7 @@ const boxContinentOceania = document.querySelector("#continent-oceania");
 const boxContinentSouthAmerica = document.querySelector(
   "#continent-southAmerica"
 );
-const boxContinentSouthAsia = document.querySelector("#continent-asia");
+const boxContinentAsia = document.querySelector("#continent-asia");
 
 let clickEurope = false;
 let clickOceania = false;
@@ -67,25 +73,26 @@ function clicked() {
   boxContinentOceania.style.boxShadow = "unset";
   boxContinentSouthAmerica.style.animation = "none";
   boxContinentSouthAmerica.style.boxShadow = "unset";
-  boxContinentSouthAsia.style.animation = "none";
-  boxContinentSouthAsia.style.boxShadow = "unset";
+  boxContinentAsia.style.animation = "none";
+  boxContinentAsia.style.boxShadow = "unset";
   document.querySelector("body").style.animationName = "bgChange";
   document.querySelector("body").style.animationDuration = "5s";
   document.querySelector("body").style.animationFillMode = "forwards";
+  back.classList.display = 'flex';
 }
 
 btnReady.onclick = function () {
   clicked();
 };
 
-europe.addEventListener("mouseover", function () {});
 
-europe.addEventListener("mouseout", function () {
-  if (!clickEurope) {
-  }
+back.addEventListener("click", function () {
+
+  location.reload();
 });
 
 europe.addEventListener("click", function () {
+  if(!clickEurope) {
   clicked();
   containerBottomEurope.style.animationName = "country-develop";
   containerBottomEurope.style.animationDuration = "2s";
@@ -107,16 +114,24 @@ europe.addEventListener("click", function () {
   tablePortugal.style.animationName = "add-table";
   tablePortugal.style.animationDuration = "2s";
   tablePortugal.style.animationFillMode = "forwards";
+  clickEurope=true;
+}
+else {
+  containerBottomEurope.style.animationName = "none";
+  spain.style.animationName = "none";
+  portugal.style.animationName = "none";
+  tableSpain.style.display = "none";
+  tableSpain.style.animationName = "none";
+  tablePortugal.style.display = "none";
+  tablePortugal.style.animationName = "none";
+  clickEurope=false;
+}
 });
 
-oceania.addEventListener("mouseover", function () {});
 
-oceania.addEventListener("mouseout", function () {
-  if (!clickOceania) {
-  }
-});
 
 oceania.addEventListener("click", function () {
+  if(!clickOceania) {
   clicked();
   containerBottomOceania.style.animationName = "country-develop";
   containerBottomOceania.style.animationDuration = "2s";
@@ -130,10 +145,6 @@ oceania.addEventListener("click", function () {
   newCaledonia.style.animationName = "newCaledoniaBg";
   newCaledonia.style.animationDuration = "0.1s";
   newCaledonia.style.animationFillMode = "forwards";
-  table2.style.display = "flex";
-  table2.style.animationName = "add-table";
-  table2.style.animationDuration = "2s";
-  table2.style.animationFillMode = "forwards";
   tableAustralia.style.display = "flex";
   tableAustralia.style.animationName = "add-table";
   tableAustralia.style.animationDuration = "2s";
@@ -142,16 +153,24 @@ oceania.addEventListener("click", function () {
   tableNewCaledonia.style.animationName = "add-table";
   tableNewCaledonia.style.animationDuration = "2s";
   tableNewCaledonia.style.animationFillMode = "forwards";
+  clickOceania=true;
+}
+else {
+  containerBottomOceania.style.animationName = "none";
+  australia.style.animationName = "none";
+  newCaledonia.style.animationName = "none";
+  tableAustralia.style.display = "none";
+  tableAustralia.style.animationName = "none";
+  tableNewCaledonia.style.display = "none";
+  tableNewCaledonia.style.animationName = "none";
+  clickOceania=false;
+}
 });
 
-southAmerica.addEventListener("mouseover", function () {});
 
-southAmerica.addEventListener("mouseout", function () {
-  if (!clickSouthAmerica) {
-  }
-});
 
 southAmerica.addEventListener("click", function () {
+  if(!clickSouthAmerica) {
   clicked();
   containerBottomSouthAmerica.style.animationName = "country-develop";
   containerBottomSouthAmerica.style.animationDuration = "2s";
@@ -173,23 +192,31 @@ southAmerica.addEventListener("click", function () {
   tableCostaRica.style.animationName = "add-table";
   tableCostaRica.style.animationDuration = "2s";
   tableCostaRica.style.animationFillMode = "forwards";
+  clickSouthAmerica=true;
+}
+else {
+  containerBottomSouthAmerica.style.animationName = "none";
+  chile.style.animationName = "none";
+  costaRica.style.animationName = "none";
+  tableChile.style.display = "none";
+  tableChile.style.animationName = "none";
+  tableCostaRica.style.display = "none";
+  tableCostaRica.style.animationName = "none";
+  clickSouthAmerica=false;
+}
 });
 
-asia.addEventListener("mouseover", function () {});
 
-asia.addEventListener("mouseout", function () {
-  if (!clickAsia) {
-  }
-});
 
 asia.addEventListener("click", function () {
+  if(!clickAsia) {
   clicked();
   containerBottomAsia.style.animationName = "country-develop";
   containerBottomAsia.style.animationDuration = "2s";
   containerBottomAsia.style.animationFillMode = "forwards";
-  boxContinentSouthAsia.style.animationName = "width-box-continent";
-  boxContinentSouthAsia.style.animationDuration = "4s";
-  boxContinentSouthAsia.style.animationFillMode = "forwards";
+  boxContinentAsia.style.animationName = "width-box-continent";
+  boxContinentAsia.style.animationDuration = "4s";
+  boxContinentAsia.style.animationFillMode = "forwards";
   thailand.style.animationName = "thailandBg";
   thailand.style.animationDuration = "0.1s";
   thailand.style.animationFillMode = "forwards";
@@ -204,4 +231,36 @@ asia.addEventListener("click", function () {
   tableUae.style.animationName = "add-table";
   tableUae.style.animationDuration = "2s";
   tableUae.style.animationFillMode = "forwards";
+  clickAsia=true;
+}
+else {
+  containerBottomAsia.style.animationName = "none";
+  thailand.style.animationName = "none";
+  uae.style.animationName = "none";
+  tableThailand.style.display = "none";
+  tableThailand.style.animationName = "none";
+  tableUae.style.display = "none";
+  tableUae.style.animationName = "none";
+  clickOceania=false;
+}
 });
+
+btnOpenInfo.addEventListener("click", function () {
+  infoBox.classList.remove("hidden");
+  infoBox.classList.add("modal");
+  boxContinentEurope.classList.add("overlay")
+  boxContinentOceania.classList.add("overlay")
+boxContinentSouthAmerica.classList.add("overlay")
+  boxContinentAsia.classList.add("overlay")
+});
+
+btnCloseInfo.addEventListener("click", function () {
+  infoBox.classList.remove("modal");
+  infoBox.classList.add("hidden");
+  btnOpenInfo.style.animation = "none";
+  boxContinentEurope.classList.remove("overlay")
+  boxContinentOceania.classList.remove("overlay")
+boxContinentSouthAmerica.classList.remove("overlay")
+  boxContinentAsia.classList.remove("overlay")
+});
+

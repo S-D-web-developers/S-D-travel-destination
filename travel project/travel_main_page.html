@@ -12,13 +12,20 @@
 </head>
 
 <body>
-  <div class="background"> </div>
+
+  
+
+  <div class="background"></div>
+  <div class="dots">
+    <lottie-player id='dot' src="https://assets8.lottiefiles.com/packages/lf20_bq485nmk.json"  background="transparent"  speed="1" autoplay></lottie-player></div>
   <div class="structure">
     <div class="title"> S&D</div>
+    <div class="back"> ← </div>
     <main>
+      
       <br><br>
       <lottie-player id="walker" src="https://assets7.lottiefiles.com/packages/lf20_WAMQ5G.json"
-        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        background="transparent" speed="1" style="width: 500px; height: 300px;" loop autoplay></lottie-player>
       <hr>
       <br>
 
@@ -41,13 +48,27 @@
             background="transparent" speed="1" style="width: 100px; height: 100px;" hover loop></lottie-player>
         </span></button>
     </main>
-
     <section class="countries">
-      <div class="top">
-        <p class="choose"> CHOOSE YOUR CONTINENT </p>
-        <p class="help">?</p>
-      </div>
+    <div class="top">
+      <p class="choose"> CHOOSE YOUR CONTINENT </p>
+      <p class="help">?</p>
+  <div class="infoBox hidden">
+    <div class="closeBox"> x</div>
+    <p style = "text-align:center; font-weight: 700; ">How info is presented?</p>
+    <hr class="hr2">
+    <ul>
+      <br>
+      <li>The 🏡 cost of life and the 💰 average salary are based of the average per month.</li>
+      <br>
+      <li>The $ sign refers to the american currency ($ USD)</li>
+      <br>
+      <li>The 🚓 crime rating is based on the crime index of each country (%)</li>
+    </ul>
+  </div>
+</div>
 
+
+  
       <section class="continent europe" id="continent-europe">
         <div class="container-top europe-background">
           <h1>Europe</h1>
@@ -60,7 +81,7 @@
             <div class="tSpain">
               <div class='c1'>
                 <li>⛅ Climate</li>
-                <li>min 0 - max 33 °C (Madrid)</li>s
+                <li>min 0 - max 33 °C (Madrid)</li>
               </div>
               <div class='c2'>
                 <li>👄 Language(s) </li>
@@ -137,10 +158,9 @@
       <section class="continent oceania" id="continent-oceania">
         <div class="container-top oceania-background">
           <h1>Oceania</h1>
-
         </div>
-        <section class="container-bottom oceania" id="oceania">
 
+        <section class="container-bottom oceania" id="oceania">
           <div class="australia">
             <p>Australia</p>
             <div class="tAustralia">
@@ -155,23 +175,23 @@
               <div class='c3'>
                 <li>🏡 Cost of life</li>
                 <li class='cost'>
-                  <div class="bar1">$2,835 USD
+                  <div class="bar1">$2,835 
                     &nbsp;</div>
                 </li>
               </div>
               <div class='c4'>
                 <li>💰 Average salary </li>
                 <li class='salary'>
-                  <div class="bar2">$5,655 USD &nbsp;</div>
+                  <div class="bar2">$5,655 &nbsp;</div>
                 </li>
               </div>
               <div class='c5'>
                 <li>🏫 Education cost</li>
-                <li>$49,547 USD (prep to year 12)</li>
+                <li>$49,547(prep to year 12)</li>
               </div>
               <div class='c6'>
                 <li>🚑 Healthcare cost</li>
-                <li>low to no cost</li>
+                <li>Low to no cost</li>
               </div>
               <div class='c7'>
                 <li>🚓 Crime rating</li>
@@ -208,7 +228,7 @@
               </div>
               <div class='c6'>
                 <li>🚑 Healthcare cost</li>
-                <li>Free to low cost for low income. Else, some fees.</li>
+                <li>Depends on income</li>
               </div>
               <div class='c7'>
                 <li>🚓 Crime rating</li>
@@ -238,13 +258,13 @@
               <div class='c3'>
                 <li>🏡 Cost of life</li>
                 <li class='cost'>
-                  <div class="bar1">$1,260 USD &nbsp;</div>
+                  <div class="bar1">$1,260 &nbsp;</div>
                 </li>
               </div>
               <div class='c4'>
                 <li>💰 Average salary </li>
                 <li class='salary'>
-                  <div class="bar2">$2,227 USD &nbsp;</div>
+                  <div class="bar2">$2,227 &nbsp;</div>
                 </li>
               </div>
               <div class='c5'>
@@ -275,13 +295,13 @@
               <div class='c3'>
                 <li>🏡 Cost of life</li>
                 <li class='cost'>
-                  <div class="bar1">$1,500 USD &nbsp;</div>
+                  <div class="bar1">$1,500 &nbsp;</div>
                 </li>
               </div>
               <div class='c4'>
                 <li>💰 Average salary </li>
                 <li class='salary'>
-                  <div class="bar2">$3,685 USD &nbsp;</div>
+                  <div class="bar2">$3,685 &nbsp;</div>
                 </li>
               </div>
               <div class='c5'>
@@ -290,7 +310,7 @@
               </div>
               <div class='c6'>
                 <li>🚑 Healthcare cost</li>
-                <li>Not free/li>
+                <li>Not free</li>
               </div>
               <div class='c7'>
                 <li>🚓 Crime rating</li>
@@ -312,35 +332,35 @@
             <div class="tThailand">
               <div class='c1'>
                 <li>⛅ Climate</li>
-                <li>min 0 - max 33 °C (Madrid)</li>
+                <li>min 22 - max 35 °C (Bangkok)</li>
               </div>
               <div class='c2'>
                 <li>👄 Language(s) </li>
-                <li>Catalan and Spanish</li>
+                <li>Thai</li>
               </div>
               <div class='c3'>
                 <li>🏡 Cost of life</li>
                 <li class='cost'>
-                  <div class="bar1">€1,451 &nbsp;</div>
+                  <div class="bar1">$1,476 &nbsp;</div>
                 </li>
               </div>
               <div class='c4'>
                 <li>💰 Average salary </li>
                 <li class='salary'>
-                  <div class="bar2">€2,250 &nbsp;</div>
+                  <div class="bar2">$2,899 &nbsp;</div>
                 </li>
               </div>
               <div class='c5'>
                 <li>🏫 Education cost</li>
-                <li>Free until 16</li>
+                <li>Free until grade 9</li>
               </div>
               <div class='c6'>
                 <li>🚑 Healthcare cost</li>
-                <li>Free</li>
+                <li>Not free</li>
               </div>
               <div class='c7'>
                 <li>🚓 Crime rating</li>
-                <li>Low (31.83)</li>
+                <li>Low (39.24)</li>
               </div>
             </div>
           </div>
@@ -349,27 +369,27 @@
             <div class="tUae">
               <div class='c1'>
                 <li>⛅ Climate</li>
-                <li>min 0 - max 33 °C (Madrid)</li>
+                <li>min 14 - max 41 °C (Madrid)</li>
               </div>
               <div class='c2'>
                 <li>👄 Language(s) </li>
-                <li>Catalan and Spanish</li>
+                <li>Arabic and English</li>
               </div>
               <div class='c3'>
                 <li>🏡 Cost of life</li>
                 <li class='cost'>
-                  <div class="bar1">€1,451 &nbsp;</div>
+                  <div class="bar1">$2,481 &nbsp;</div>
                 </li>
               </div>
               <div class='c4'>
                 <li>💰 Average salary </li>
                 <li class='salary'>
-                  <div class="bar2">€2,250 &nbsp;</div>
+                  <div class="bar2">$5,854 &nbsp;</div>
                 </li>
               </div>
               <div class='c5'>
                 <li>🏫 Education cost</li>
-                <li>Free until 16</li>
+                <li>Not free</li>
               </div>
               <div class='c6'>
                 <li>🚑 Healthcare cost</li>
@@ -377,7 +397,7 @@
               </div>
               <div class='c7'>
                 <li>🚓 Crime rating</li>
-                <li>Low (31.83)</li>
+                <li>Very low (16.25)</li>
               </div>
             </div>
           </div>

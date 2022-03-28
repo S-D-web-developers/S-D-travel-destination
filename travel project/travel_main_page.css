@@ -33,9 +33,17 @@ body {
   );
 }
 
+.dots {
+  position: absolute;
+  opacity:0.5;
+  background-size:contain;
+  width:100%;
+  top:-5rem;
+
+}
+
 .top {
   opacity: 0;
-  text-shadow: #4068ee 1px 0 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,6 +62,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor:pointer;
 }
 
 .structure {
@@ -80,25 +89,53 @@ body {
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   color: black;
-  padding: 5px;
-  transform: rotate(-90deg);
-  top: 1rem;
-  left: -1rem;
+  width:4rem;
+  padding:5px;
+  transform: rotate(90deg);
+  top: 1.5rem;
+  right: -1rem;
   text-align: center;
   opacity: 0.9;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  z-index: 1;
+  border-bottom-left-radius: 10px;
+  
 }
+
+.back {
+  position: fixed;
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: black;
+  height:4rem;
+  padding: 5px;
+  top: 0.5rem;
+  left: 0;
+  display:none;
+  align-items:center;
+  opacity: 0.9;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
 
 hr {
   width: 40%;
   height: 2px;
   background-color: white;
   border: none;
+}
+
+.hr2 {
+  background-color: black;
+  width: 55%;
+  height: 1px;
 }
 
 main {
@@ -230,7 +267,8 @@ button:focus {
   flex-direction: column;
   align-items: center;
   filter: grayscale(80%);
-  margin-top: 10%;
+  top:5rem;
+
 }
 
 @keyframes move-countries {
@@ -265,6 +303,7 @@ button:focus {
   align-items: space-around;
   justify-content: center;
   cursor: pointer;
+  z-index:-1;
 }
 
 @keyframes continent-moves {
@@ -378,10 +417,9 @@ button:focus {
   justify-content: space-between;
 }
 
-.countries li {
+.continent li {
   position: relative;
   display: flex;
-
   font-size: 25px;
   white-space: nowrap;
 }
@@ -497,6 +535,13 @@ button:focus {
   to {
     height: 40rem;
     transition: height 0.1s ease-out;
+  }
+}
+
+@keyframes country-hide {
+  to {
+    height: 4rem;
+    transition: height 3s ease-out;
   }
 }
 
@@ -799,3 +844,45 @@ button:focus {
   border-radius: 16px;
   text-align: right;
 }
+
+.overlay {
+  filter:blur(5px)
+}
+
+.modal {
+  position: absolute;
+  top:30rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  transition: all 2s;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index:100;
+}
+
+
+.infoBox {
+  position: absolute;
+  font-size: 19px;
+  font-weight: none;
+  color: black;
+  text-align: justify;
+  z-index:1;
+}
+
+.closeBox {
+  position: absolute;
+  top: 1.2rem;
+  right: 3rem;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align:right;
+}
+
+
